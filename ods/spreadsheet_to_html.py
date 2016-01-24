@@ -6,6 +6,7 @@
 # http://www.ctroms.com/blog/code/python/2011/04/20/csv-to-html-table-with-python/ 
 # modified to work with .ods files
 # Version 2 - added css class to all columns except header
+# Uses http://www.kryogenix.org/code/browser/sorttable/
 
 import codecs
 import ezodf
@@ -33,11 +34,11 @@ def convert(ods_file, sheets=None):
         for column in row:
             print column
             if column == None: 
-              column = str(None)
+                column = str(None)
             elif type(column) == float:
-              column = str(None)
+                column = str(None)
             else:
-              column = column.encode('utf-8')
+                column = column.encode('utf-8')
 
             htmlfile.write('<th>' + column + '</th>\n')
 
@@ -52,8 +53,8 @@ def convert(ods_file, sheets=None):
 
 
 if __name__ == '__main__':
-  spreadsheet_file = sys.argv[1]
+    spreadsheet_file = sys.argv[1]
 
-  sheets = sys.argv[2:] # Lack of arguments means len(sheets) == 0
+    sheets = sys.argv[2:] # Lack of arguments means len(sheets) == 0
 
-  convert(spreadsheet_file, sheets)
+    convert(spreadsheet_file, sheets)
