@@ -1,6 +1,3 @@
-
-
-def test():
-	# indent
-	pass
-	
+def t():
+    # indent
+    pass	
